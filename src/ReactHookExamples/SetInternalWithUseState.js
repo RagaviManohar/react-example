@@ -4,7 +4,7 @@ export const SetInternalExample = () => {
 	const [value, setValue] = useState(0)
 
 	useEffect(() => {
-		console.log('useEffect===')
+		console.log('useEffect===') // this will print only once
 
 		let interval = setInterval(() => {
 
@@ -17,15 +17,13 @@ export const SetInternalExample = () => {
 
 			// uncomment the below line to check the failed version
 			// setValue(value + 1)
+			// console.log(value) // this will trigger in loop with value as initialState
 
 			/**
 			 * this 'prevState' will always have a updated previous value
 			 * even though actual state is not up-to-date here, since closure still holds the initialState
 			 */
-			setValue(prevState => {
-				console.log(value, 'inside')
-				return prevState + 1
-			})
+			setValue(prevState => prevState + 1)
 		}, 1000);
 
 		return () => clearInterval(interval);
