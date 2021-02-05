@@ -1,15 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-import HooksExample from './HooksExample';
-import SetInternalWithUseState from './SetInternalWithUseState';
+import HooksExample from "./ReactHookExamples/HooksExample";
+import SetInternalWithUseState from "./ReactHookExamples/SetInternalWithUseState";
+import {
+  SideMenuStyles,
+  TopDownMenuStyles,
+  CommonStyles,
+} from "./CommonStyles/SideMenuStyles";
 
 function App() {
   return (
-    <div className="App">
-      <HooksExample />
-
-      <SetInternalWithUseState />
+    <CommonStyles>
+      <SideMenuStyles type="right" width={"100px"} />
+      <TopDownMenuStyles type="top">
+        <HooksExample />
+        <SetInternalWithUseState />
+      </TopDownMenuStyles>
 
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -25,7 +31,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-    </div>
+    </CommonStyles>
   );
 }
 

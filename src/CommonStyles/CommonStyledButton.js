@@ -11,6 +11,7 @@ export const CommonStyledButton = styled.button`
 
   font-family: "GothamRoundedMedium";
   font-size: 14px;
+  width: 100%
   display: flex;
   align-items: center;
   justify-content: center;

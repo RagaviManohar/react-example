@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import CommonStyledButton from "./CommonStyledButton";
+import CommonStyledButton from "../CommonStyles/CommonStyledButton";
 
 function HooksExample() {
   // Declare a new state variable, which we'll call "count"
