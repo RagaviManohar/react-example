@@ -1,30 +1,29 @@
-import logo from './logo.svg';
+
+import { BrowserRouter, Link, Switch, Route } from 'react-router-dom'
+
 import './App.css';
 
-import HooksExample from './HooksExample';
-import SetInternalWithUseState from './SetInternalWithUseState';
+import ReactHookExamples from './ReactHookExamples';
+import ReachHookFormExamples from './ReactHookFormExamples/index';
+import ReactCloneElementExample1 from './ReactCloneElementExample/index.example1';
 
 function App() {
   return (
     <div className="App">
-      <HooksExample />
+      <BrowserRouter>
+        <Link to="/react-hook-form-examples" className="btn btn-primary">React Hook Form Example</Link>
 
-      <SetInternalWithUseState />
+        <div className="mt-2">
+          <Switch>
+            <Route exact path="/react-hook-form-examples" component={ReachHookFormExamples} />
+            <Route exact path="/" component={ReactHookExamples} />
 
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+            <Route exact path="/react-clone-element-example1" component={ReactCloneElementExample1} />
+
+            <Route exact path="/react-clone-element-example2" component={ReactCloneElementExample1} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
