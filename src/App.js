@@ -1,30 +1,29 @@
-
-import { BrowserRouter, Link, Switch, Route } from 'react-router-dom'
-
-import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import ReactHookExamples from './ReactHookExamples';
 import ReachHookFormExamples from './ReactHookFormExamples/index';
+import StyledCompExample from './StyledCompExample/index';
 import ReactCloneElementExample1 from './ReactCloneElementExample/index.example1';
+
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Link to="/react-hook-form-examples" className="btn btn-primary">React Hook Form Example</Link>
+    <BrowserRouter>
+      <div className="mt-4">
+        <Switch>
+          <Route exact path="/" component={ReactHookExamples} />
 
-        <div className="mt-2">
-          <Switch>
-            <Route exact path="/react-hook-form-examples" component={ReachHookFormExamples} />
-            <Route exact path="/" component={ReactHookExamples} />
+          <Route exact path="/react-hook-form-examples" component={ReachHookFormExamples} />
 
-            <Route exact path="/react-clone-element-example1" component={ReactCloneElementExample1} />
+          <Route exact path="/styled-comp-example" component={StyledCompExample} />
 
-            <Route exact path="/react-clone-element-example2" component={ReactCloneElementExample1} />
-          </Switch>
-        </div>
-      </BrowserRouter>
-    </div>
+          <Route exact path="/react-clone-element-example1" component={ReactCloneElementExample1} />
+
+          <Route exact path="/react-clone-element-example2" component={ReactCloneElementExample1} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
