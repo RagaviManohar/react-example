@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+
+import CommonStyledButton from "../CommonStyles/CommonStyledButton";
 
 function HooksExample() {
   // Declare a new state variable, which we'll call "count"
@@ -7,9 +9,10 @@ function HooksExample() {
   return (
     <div>
       <p>You clicked {count} times</p>
-      <button type="button" onClick={() => setCount(count + 1)}>
+      {/** Button styles are written as common using styles components */}
+      <CommonStyledButton primary onClick={() => setCount(count + 1)}>
         Click me
-      </button>
+      </CommonStyledButton>
     </div>
   );
 }
