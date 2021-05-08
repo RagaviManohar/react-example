@@ -25,18 +25,6 @@ export const color = {
   borderInputFocus: '#4c9aff',
 };
 
-export const sizes = {
-  appNavBarLeftWidth: 64,
-  secondarySideBarWidth: 230,
-  minViewportWidth: 1000,
-};
-
-export const zIndexValues = {
-  modal: 1000,
-  dropdown: 101,
-  navLeft: 100,
-};
-
 export const font = {
   regular: 'font-family: "CircularStdBook"; font-weight: normal;',
   medium: 'font-family: "CircularStdMedium"; font-weight: normal;',

@@ -11,8 +11,9 @@ function FormExample () {
   return (
       <div style={{width: '500px', margin: 32}}>
         <Form  onSubmit={onSubmit} onError={onError} >
-          <Field.Input name={'name'} tip={'Name shown in the dashboard'} rules={{required: 'Enter some value'}} label={'First Name'}></Field.Input>
+          <Field.Input icon={'firefox'} name={'name'} tip={'Name shown in the dashboard'} rules={{required: 'Enter some value'}} label={'First Name'}></Field.Input>
           <Field.Input name={'lastname'}
+            icon="tor"
             rules={{
               required: 'Enter some value',
               minLength: {

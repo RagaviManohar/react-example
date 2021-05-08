@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { color, font } from '../../shared/utils/styles';
-// import Icon from 'shared/components/Icon';
+import Icon from '../Icon';
 
 export const StyledInput = styled.div`
   position: relative;
@@ -41,10 +41,5 @@ export const InputElement = styled.input`
     `}
 `;
 
-// export const StyledIcon = styled(Icon)`
-//   position: absolute;
-//   top: 8px;
-//   left: 8px;
-//   pointer-events: none;
-//   color: ${color.textMedium};
-// `;
+export const StyledIcon = styled(Icon)`
+`;
