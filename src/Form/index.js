@@ -22,7 +22,7 @@ function FormExample () {
               }
             }}
             label={'Last Name'}></Field.Input>
-          <button style={{width: '200px', height: '32px'}}>Submit</button>
+          <button style={{width: '200px', height: '32px', marginTop: '24px'}}>Submit</button>
         </Form>
       </div>
   )
