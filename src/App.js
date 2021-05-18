@@ -4,6 +4,7 @@ import ReactHookExamples from './ReactHookExamples';
 import ReachHookFormExamples from './ReactHookFormExamples/index';
 import StyledCompExample from './StyledCompExample/index';
 import ReactCloneElementExample1 from './ReactCloneElementExample/index.example1';
+import DropZone from './DropZone/index';
 
 import "./App.css";
 
@@ -21,6 +22,8 @@ function App() {
           <Route exact path="/react-clone-element-example1" component={ReactCloneElementExample1} />
 
           <Route exact path="/react-clone-element-example2" component={ReactCloneElementExample1} />
+
+          <Route exact path="/react-drop-zone-example" component={DropZone} />
         </Switch>
       </div>
     </BrowserRouter>
