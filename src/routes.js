@@ -12,6 +12,8 @@ const routes = {
 	form: '/form',
 	dynamicForm: '/form-dynamic',
 	reactDropZoneExample: '/react-drop-zone-example',
+	reactCompWay1: '/react-comp-example1',
+	reactCompWay2: '/react-comp-example2',
 }
 
 export const linkArray = [
@@ -24,6 +26,8 @@ export const linkArray = [
 	{ key: 'form', to: routes.form, name: 'Form' },
 	{ key: 'dynamicForm', to: routes.dynamicForm, name: 'Dynamic Form' },
 	{ key: 'reactDropZoneExample', to: routes.reactDropZoneExample, name: 'React DropZone' },
+	{ key: 'reactCompWay1', to: routes.reactCompWay1, name: 'React Com Way 1' },
+	{ key: 'reactCompWay2', to: routes.reactCompWay2, name: 'React Com Way 2' },
 ]
 
 export default routes

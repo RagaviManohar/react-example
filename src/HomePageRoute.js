@@ -9,6 +9,8 @@ import FileUpload from './ReactCropper';
 import FormExample from './Form';
 import DynamicFormExample from './DynamicForm/Example';
 import DropZone from './DropZone/index';
+import ReactCompOldWayExample from './ReactComponentNewWay/ReactCompOldWayExample';
+import ReactCompNewWayExample from './ReactComponentNewWay/ReactCompNewWayExample';
 
 import routes from './routes';
 
@@ -32,6 +34,10 @@ export const HomePageRoute = () => (
       <Route exact path={routes.dynamicForm} component={DynamicFormExample} />
 
       <Route exact path={routes.reactDropZoneExample} component={DropZone} />
+
+      <Route exact path={routes.reactCompWay1} component={ReactCompOldWayExample} />
+      
+      <Route exact path={routes.reactCompWay2} component={ReactCompNewWayExample} />
     </Switch>
   </div>
 );
