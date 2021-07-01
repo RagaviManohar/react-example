@@ -16,7 +16,6 @@ function StyledCompExample() {
                 <SetInternalWithUseState />
             </TopDownMenuStyles>
         </CommonStyles>
-
     );
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 export default function Form({ defaultValues, children, onSubmit, onError }) {
-  const { handleSubmit, register, errors } = useForm({
+  const { handleSubmit, register, formState: { errors } } = useForm({
     defaultValues,
     mode: "onChange",
   });

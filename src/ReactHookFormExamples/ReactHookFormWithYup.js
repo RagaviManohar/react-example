@@ -59,7 +59,7 @@ export const ReactHookFormWithYup = () => {
               className="form-control w-100"
               name="instituteName"
               placeholder="Enter Institute Name"
-              ref={register}
+              {...register('instituteName')}
             />
 
             <ErrorMessage
@@ -90,7 +90,7 @@ export const ReactHookFormWithYup = () => {
                       className="form-control w-100"
                       name={`${fieldName}.email`}
                       placeholder="Enter Email"
-                      ref={register}
+                      {...register(`${fieldName}.email`)}
                     />
 
                     <ErrorMessage
@@ -117,8 +117,8 @@ export const ReactHookFormWithYup = () => {
                       className="form-control w-100"
                       name={`${fieldName}.fullName`}
                       placeholder="Enter Full Name"
-                      ref={register}
-                    />
+                      {...register(`${fieldName}.fullName`)}
+                      />
 
                     <ErrorMessage
                       errors={errors}
