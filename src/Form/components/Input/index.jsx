@@ -8,8 +8,8 @@ const Input = ({ icon, className, filter, onChange, register, name, rules = {}, 
   return (
 
     <StyledInput className={className}>
-      {icon && <StyledIcon type={icon}/>}
-      <InputElement ref={register(rules)} name={name} {...inputProps}  hasIcon={!!icon} />
+      {icon && <StyledIcon type={icon} />}
+      <InputElement {...register(name, { ...rules })} name={name} {...inputProps} hasIcon={!!icon} />
     </StyledInput>
   );
 
@@ -30,7 +30,7 @@ const defaultProps = {
   icon: undefined,
   invalid: false,
   filter: undefined,
-  onChange: () => {},
+  onChange: () => { },
 };
 
 Input.propTypes = propTypes;
