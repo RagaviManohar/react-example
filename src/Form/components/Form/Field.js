@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import React from 'react';
+import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { uniqueId, get } from 'lodash';
 import Input from '../Input';
@@ -23,7 +23,7 @@ const defaultProps = {
 };
 
 const generateField = FormComponent => {
-  const FieldComponent = ({ className, label, tip, error, name, errors, ...otherProps }) => {
+  const FieldComponent = forwardRef(({ className, label, tip, error, name, errors, ...otherProps }, ref) => {
     const fieldId = uniqueId('form-field-');
 
     console.log(get(errors, name), 'error')
@@ -34,12 +34,12 @@ const generateField = FormComponent => {
         data-testid={name ? `form-field:${name}` : 'form-field'}
       >
         {label && <FieldLabel htmlFor={fieldId}>{label}</FieldLabel>}
-        <FormComponent id={fieldId} invalid={!!get(errors, [name, 'message'])} name={name} {...otherProps} />
+        <FormComponent ref={ref} id={fieldId} invalid={!!get(errors, [name, 'message'])} name={name} {...otherProps} />
         {tip && <FieldTip>{tip}</FieldTip>}
         {get(errors, [name, 'message']) && <FieldError>{get(errors, [name, 'message'])}</FieldError>}
       </StyledField>
     );
-  };
+  });
 
   FieldComponent.propTypes = propTypes;
   FieldComponent.defaultProps = defaultProps;

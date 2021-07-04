@@ -11,17 +11,20 @@ export default function Form({ defaultValues, children, onSubmit, onError }) {
     <form onSubmit={handleSubmit(onSubmit, onError)}>
       {Array.isArray(children)
         ? children.map((child) => {
-            return child.props.name
-              ? React.createElement(child.type, {
-                  ...{
-                    ...child.props,
-                    register,
-                    errors,
-                    key: child.props.name
-                  }
-                })
-              : child;
-          })
+
+          if(child.props.name) {
+            return React.cloneElement(child, {
+              ...{
+                ...child.props,
+                register,
+                errors,
+                key: child.props.name
+              }
+            })
+          } else {
+            return child;
+          }
+        })
         : children}
     </form>
   );

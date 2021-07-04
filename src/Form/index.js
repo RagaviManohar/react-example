@@ -2,16 +2,18 @@
 import React from 'react'
 import Field from './components/Form/Field';
 import Form from './components/Form';
+import { useAutoFocus } from '../custom-hooks';
 
 function FormExample () {
 
   const onSubmit = (data) => console.log(data);
   const onError = (errors, e) => console.log(errors);
+  const autoFocusedRef = useAutoFocus(true)
 
   return (
       <div style={{width: '500px', margin: 32}}>
-        <Form  onSubmit={onSubmit} onError={onError} >
-          <Field.Input icon={'firefox'} name={'name'} tip={'Name shown in the dashboard'} rules={{required: 'Enter some value'}} label={'First Name'}></Field.Input>
+        <Form defaultValues={{}} onSubmit={onSubmit} onError={onError} >
+          <Field.Input ref={autoFocusedRef} icon={'firefox'} name={'name'} tip={'Name shown in the dashboard'} rules={{required: 'Enter some value'}} label={'First Name'}></Field.Input>
           <Field.Input name={'lastname'}
             icon="tor"
             rules={{
